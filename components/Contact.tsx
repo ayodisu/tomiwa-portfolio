@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="bg-charcoal text-white pt-24 pb-12">
+    <footer id="contact" className="bg-charcoal dark:bg-darkbg text-white pt-24 pb-12 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 mb-20">
 
@@ -66,10 +66,10 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-sans">
+        <div className="border-t border-gray-800 dark:border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-sans">
           <p>&copy; {new Date().getFullYear()} Ademiju Omotomiwa. All rights reserved.</p>
           <p className="mt-2 md:mt-0">
-            Designed by <a href="https://wa.me/2347038558332" target="_blank" rel="noopener noreferrer" className="hover:text-terracotta transition-colors">Abdulwahab</a>
+            Designed with ❤️ by <a href="https://wa.me/2347038558332" target="_blank" rel="noopener noreferrer" className="hover:text-terracotta transition-colors">Abdulwahab</a>
           </p>
         </div>
       </div>

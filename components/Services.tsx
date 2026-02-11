@@ -19,7 +19,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-white dark:bg-darksurface transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section Header */}
@@ -30,7 +30,7 @@ const Services: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">Craft & Competence</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-charcoal dark:text-gray-100 mb-4">Craft & Competence</h2>
             <div className="h-1 w-20 bg-terracotta"></div>
           </motion.div>
         </div>
@@ -53,11 +53,11 @@ const Services: React.FC = () => {
                 <motion.div
                   key={service.title}
                   variants={itemVariants}
-                  className="group p-6 border border-gray-100 hover:border-terracotta/30 transition-colors duration-300 bg-offwhite hover:shadow-lg hover:-translate-y-1 transform"
+                  className="group p-6 border border-gray-100 dark:border-gray-800 hover:border-terracotta/30 transition-colors duration-300 bg-offwhite dark:bg-darkcard hover:shadow-lg hover:-translate-y-1 transform"
                 >
                   <service.icon className="w-8 h-8 text-terracotta mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h4 className="font-serif text-xl text-charcoal mb-2">{service.title}</h4>
-                  <p className="font-sans text-sm text-gray-500 leading-relaxed">
+                  <h4 className="font-serif text-xl text-charcoal dark:text-gray-100 mb-2">{service.title}</h4>
+                  <p className="font-sans text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                     {service.description}
                   </p>
                 </motion.div>
@@ -82,7 +82,7 @@ const Services: React.FC = () => {
                 {GENRE_SKILLS.map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 bg-paper text-charcoal font-serif text-sm italic border-l-2 border-transparent hover:border-terracotta transition-all cursor-default"
+                    className="px-4 py-2 bg-paper dark:bg-darkcard text-charcoal dark:text-gray-300 font-serif text-sm italic border-l-2 border-transparent hover:border-terracotta transition-all cursor-default"
                   >
                     {skill}
                   </span>
@@ -104,7 +104,7 @@ const Services: React.FC = () => {
                 {CORE_SKILLS.map((skill) => (
                   <li key={skill} className="flex items-center space-x-3 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-terracotta/40 group-hover:bg-terracotta transition-colors"></span>
-                    <span className="font-sans text-charcoal font-medium group-hover:translate-x-1 transition-transform duration-300">
+                    <span className="font-sans text-charcoal dark:text-gray-200 font-medium group-hover:translate-x-1 transition-transform duration-300">
                       {skill}
                     </span>
                   </li>

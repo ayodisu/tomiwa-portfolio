@@ -8,7 +8,7 @@ const Portfolio: React.FC = () => {
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 bg-paper">
+    <section id="portfolio" className="py-24 bg-paper dark:bg-darkbg transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="mb-16 flex flex-col items-center text-center">
@@ -18,9 +18,9 @@ const Portfolio: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">Selected Works</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-charcoal dark:text-gray-100 mb-4">Selected Works</h2>
             <div className="h-1 w-20 bg-darkteal mx-auto"></div>
-            <p className="mt-6 text-gray-600 max-w-2xl font-sans font-light mx-auto">
+            <p className="mt-6 text-gray-600 dark:text-gray-400 max-w-2xl font-sans font-light mx-auto">
               A curation of narratives exploring the human condition, silence, and the complex geometry of emotions.
             </p>
           </motion.div>
@@ -35,7 +35,7 @@ const Portfolio: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col justify-between min-h-[300px] border border-transparent hover:border-terracotta/10"
+              className="bg-white dark:bg-darkcard p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col justify-between min-h-[300px] border border-transparent hover:border-terracotta/10 dark:border-gray-800 dark:hover:border-terracotta/20"
             >
               <div>
                 {story.accolade && (
@@ -43,7 +43,7 @@ const Portfolio: React.FC = () => {
                     {story.accolade}
                   </span>
                 )}
-                <h3 className="font-serif text-2xl text-charcoal mb-3 group-hover:text-terracotta transition-colors">
+                <h3 className="font-serif text-2xl text-charcoal dark:text-gray-100 mb-3 group-hover:text-terracotta transition-colors">
                   {story.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -53,14 +53,14 @@ const Portfolio: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                <p className="font-serif italic text-gray-600 leading-relaxed line-clamp-4">
+                <p className="font-serif italic text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">
                   "{story.excerpt}"
                 </p>
               </div>
 
               <button
                 onClick={() => setSelectedStory(story)}
-                className="mt-6 flex items-center text-darkteal font-sans text-sm font-bold tracking-wide group-hover:underline decoration-terracotta underline-offset-4"
+                className="mt-6 flex items-center text-darkteal dark:text-teal-400 font-sans text-sm font-bold tracking-wide group-hover:underline decoration-terracotta underline-offset-4"
               >
                 <BookOpen size={16} className="mr-2" />
                 READ FULL PIECE
@@ -88,18 +88,18 @@ const Portfolio: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative bg-offwhite w-full max-w-3xl max-h-full overflow-y-auto shadow-2xl rounded-sm"
+              className="relative bg-offwhite dark:bg-darkcard w-full max-w-3xl max-h-full overflow-y-auto shadow-2xl rounded-sm"
             >
               <button
                 onClick={() => setSelectedStory(null)}
-                className="sticky top-0 right-0 float-right m-6 p-2 bg-white/80 hover:bg-terracotta hover:text-white rounded-full transition-all z-10"
+                className="sticky top-0 right-0 float-right m-6 p-2 bg-white/80 dark:bg-gray-700/80 hover:bg-terracotta hover:text-white rounded-full transition-all z-10"
               >
                 <X size={24} />
               </button>
 
               <div className="p-8 md:p-16 space-y-8">
-                <div className="text-center border-b border-gray-200 pb-8">
-                  <h3 className="font-serif text-3xl md:text-5xl text-charcoal mb-4">
+                <div className="text-center border-b border-gray-200 dark:border-gray-700 pb-8">
+                  <h3 className="font-serif text-3xl md:text-5xl text-charcoal dark:text-gray-100 mb-4">
                     {selectedStory.title}
                   </h3>
                   {selectedStory.accolade && (
@@ -109,16 +109,16 @@ const Portfolio: React.FC = () => {
                   )}
                 </div>
 
-                <div className="prose prose-lg prose-slate font-serif text-gray-700 leading-loose mx-auto">
+                <div className="prose prose-lg prose-slate dark:prose-invert font-serif text-gray-700 dark:text-gray-300 leading-loose mx-auto">
                   {selectedStory.fullText.split('\n').map((paragraph, index) => (
                     paragraph.trim() && <p key={index} className="mb-6">{paragraph}</p>
                   ))}
                 </div>
 
-                <div className="pt-8 border-t border-gray-200 text-center">
+                <div className="pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
                   <button
                     onClick={() => setSelectedStory(null)}
-                    className="text-gray-400 hover:text-charcoal font-sans text-sm uppercase tracking-widest"
+                    className="text-gray-400 hover:text-charcoal dark:hover:text-gray-200 font-sans text-sm uppercase tracking-widest"
                   >
                     Close Reader
                   </button>

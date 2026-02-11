@@ -18,6 +18,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -30,6 +31,9 @@
             terracotta: '#7C2D12',
             darkteal: '#134E4A',
             paper: '#F5F5F4',
+            darkbg: '#0D0D0D',
+            darkcard: '#1A1A1A',
+            darksurface: '#141414',
           }
         }
       }
@@ -44,6 +48,12 @@
     body {
       background-color: #FAFAFA;
       color: #1A1A1A;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html.dark body {
+      background-color: #0D0D0D;
+      color: #E5E5E5;
     }
 
     /* Custom Scrollbar */
@@ -55,13 +65,25 @@
       background: #FAFAFA;
     }
 
+    html.dark ::-webkit-scrollbar-track {
+      background: #0D0D0D;
+    }
+
     ::-webkit-scrollbar-thumb {
       background: #D4D4D4;
       border-radius: 4px;
     }
 
+    html.dark ::-webkit-scrollbar-thumb {
+      background: #333;
+    }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #A3A3A3;
+    }
+
+    html.dark ::-webkit-scrollbar-thumb:hover {
+      background: #555;
     }
   </style>
   <script type="importmap">
